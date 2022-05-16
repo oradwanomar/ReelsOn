@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B40AC5244F299F0CE3C87F0 /* Pods_ReelsOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */; };
 		859A70EE282FA533009EB97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A70ED282FA533009EB97F /* AppDelegate.swift */; };
 		859A70F0282FA533009EB97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A70EF282FA533009EB97F /* SceneDelegate.swift */; };
 		859A70F7282FA535009EB97F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859A70F6282FA535009EB97F /* Assets.xcassets */; };
@@ -14,9 +15,12 @@
 		859A7106282FA680009EB97F /* ReelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A7105282FA680009EB97F /* ReelData.swift */; };
 		859A7108282FAB35009EB97F /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A7107282FAB35009EB97F /* CustomNavigationViewController.swift */; };
 		859A710A282FB2DC009EB97F /* ReelsOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A7109282FB2DC009EB97F /* ReelsOnViewController.swift */; };
+		859A710E282FFF36009EB97F /* ReelDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A710D282FFF36009EB97F /* ReelDetailsView.swift */; };
+		859A7110283000A0009EB97F /* ReelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A710F283000A0009EB97F /* ReelCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReelsOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A70EA282FA533009EB97F /* ReelsOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelsOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A70ED282FA533009EB97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859A70EF282FA533009EB97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,10 @@
 		859A7105282FA680009EB97F /* ReelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelData.swift; sourceTree = "<group>"; };
 		859A7107282FAB35009EB97F /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		859A7109282FB2DC009EB97F /* ReelsOnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsOnViewController.swift; sourceTree = "<group>"; };
+		859A710D282FFF36009EB97F /* ReelDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelDetailsView.swift; sourceTree = "<group>"; };
+		859A710F283000A0009EB97F /* ReelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelCollectionViewCell.swift; sourceTree = "<group>"; };
+		90161BE0880187497D8D71F5 /* Pods-ReelsOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReelsOn.debug.xcconfig"; path = "Target Support Files/Pods-ReelsOn/Pods-ReelsOn.debug.xcconfig"; sourceTree = "<group>"; };
+		D1E862A206B70D4D5593E902 /* Pods-ReelsOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReelsOn.release.xcconfig"; path = "Target Support Files/Pods-ReelsOn/Pods-ReelsOn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B40AC5244F299F0CE3C87F0 /* Pods_ReelsOn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DFCDA087FDCA8D3465EA1D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90161BE0880187497D8D71F5 /* Pods-ReelsOn.debug.xcconfig */,
+				D1E862A206B70D4D5593E902 /* Pods-ReelsOn.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		85691827FA255953DEC11805 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		859A70E1282FA533009EB97F = {
 			isa = PBXGroup;
 			children = (
 				859A70EC282FA533009EB97F /* ReelsOn */,
 				859A70EB282FA533009EB97F /* Products */,
+				5DFCDA087FDCA8D3465EA1D9 /* Pods */,
+				85691827FA255953DEC11805 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +87,7 @@
 		859A70EC282FA533009EB97F /* ReelsOn */ = {
 			isa = PBXGroup;
 			children = (
+				859A7111283001A0009EB97F /* Videos */,
 				859A7104282FA5DA009EB97F /* Base */,
 				859A7103282FA5CE009EB97F /* Controller */,
 				859A7102282FA5C3009EB97F /* View */,
@@ -78,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				859A7107282FAB35009EB97F /* CustomNavigationViewController.swift */,
+				859A710D282FFF36009EB97F /* ReelDetailsView.swift */,
+				859A710F283000A0009EB97F /* ReelCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +134,13 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		859A7111283001A0009EB97F /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 859A70FE282FA535009EB97F /* Build configuration list for PBXNativeTarget "ReelsOn" */;
 			buildPhases = (
+				5E1605736FBD8EFFA161D444 /* [CP] Check Pods Manifest.lock */,
 				859A70E6282FA533009EB97F /* Sources */,
 				859A70E7282FA533009EB97F /* Frameworks */,
 				859A70E8282FA533009EB97F /* Resources */,
+				5BF1BC93723A55E0492912D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,15 +208,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BF1BC93723A55E0492912D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReelsOn/Pods-ReelsOn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReelsOn/Pods-ReelsOn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReelsOn/Pods-ReelsOn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E1605736FBD8EFFA161D444 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReelsOn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		859A70E6282FA533009EB97F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				859A7108282FAB35009EB97F /* CustomNavigationViewController.swift in Sources */,
+				859A710E282FFF36009EB97F /* ReelDetailsView.swift in Sources */,
 				859A70EE282FA533009EB97F /* AppDelegate.swift in Sources */,
 				859A710A282FB2DC009EB97F /* ReelsOnViewController.swift in Sources */,
 				859A70F0282FA533009EB97F /* SceneDelegate.swift in Sources */,
+				859A7110283000A0009EB97F /* ReelCollectionViewCell.swift in Sources */,
 				859A7106282FA680009EB97F /* ReelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +397,7 @@
 		};
 		859A70FF282FA535009EB97F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90161BE0880187497D8D71F5 /* Pods-ReelsOn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -339,6 +425,7 @@
 		};
 		859A7100282FA535009EB97F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E862A206B70D4D5593E902 /* Pods-ReelsOn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

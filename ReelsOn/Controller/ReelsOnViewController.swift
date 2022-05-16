@@ -21,6 +21,7 @@ class ReelsOnViewController: UIViewController {
         collectionview.contentInsetAdjustmentBehavior = .never
     
         collectionview.setCollectionViewLayout(layout, animated: false)
+        collectionview.register(ReelCollectionViewCell.self, forCellWithReuseIdentifier: "ReelCollectionViewCell")
         collectionview.isPagingEnabled = true
         collectionview.backgroundColor = .systemBackground
         collectionview.delegate = self
@@ -57,7 +58,8 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReelCollectionViewCell", for: indexPath) as! ReelCollectionViewCell
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
