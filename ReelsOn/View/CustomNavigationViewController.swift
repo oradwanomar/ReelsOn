@@ -17,7 +17,7 @@ class CustomNavigationViewController : UINavigationController {
         let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         bounds.size.height += statusBarHeight
         gradient.frame = bounds
-        gradient.colors = [UIColor.black.withAlphaComponent(1).cgColor, UIColor.clear.cgColor]
+        gradient.colors = [UIColor.black.withAlphaComponent(0.6).cgColor, UIColor.clear.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
         

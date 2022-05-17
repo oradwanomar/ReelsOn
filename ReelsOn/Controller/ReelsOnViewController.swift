@@ -19,7 +19,6 @@ class ReelsOnViewController: UIViewController {
         
         
         collectionview.contentInsetAdjustmentBehavior = .never
-    
         collectionview.setCollectionViewLayout(layout, animated: false)
         collectionview.register(ReelCollectionViewCell.self, forCellWithReuseIdentifier: "ReelCollectionViewCell")
         collectionview.isPagingEnabled = true
@@ -29,7 +28,7 @@ class ReelsOnViewController: UIViewController {
         return collectionview
     }()
     
-    var reels : [ReelData] = []
+    var reels : [ReelData] = [ReelData(userName: "@omarradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "When the song is so hot 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song"),ReelData(userName: "@omarradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +58,7 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReelCollectionViewCell", for: indexPath) as! ReelCollectionViewCell
+        cell.reelData = reels[indexPath.row]
         return cell
     }
     

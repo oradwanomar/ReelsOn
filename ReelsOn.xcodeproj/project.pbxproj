@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B40AC5244F299F0CE3C87F0 /* Pods_ReelsOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */; };
+		851703722833959000C8383D /* equalizer.json in Resources */ = {isa = PBXBuildFile; fileRef = 851703712833959000C8383D /* equalizer.json */; };
 		859A70EE282FA533009EB97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A70ED282FA533009EB97F /* AppDelegate.swift */; };
 		859A70F0282FA533009EB97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A70EF282FA533009EB97F /* SceneDelegate.swift */; };
 		859A70F7282FA535009EB97F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859A70F6282FA535009EB97F /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReelsOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		851703712833959000C8383D /* equalizer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equalizer.json; sourceTree = "<group>"; };
 		859A70EA282FA533009EB97F /* ReelsOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelsOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A70ED282FA533009EB97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859A70EF282FA533009EB97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +56,6 @@
 				90161BE0880187497D8D71F5 /* Pods-ReelsOn.debug.xcconfig */,
 				D1E862A206B70D4D5593E902 /* Pods-ReelsOn.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -99,6 +100,7 @@
 		859A7101282FA5BC009EB97F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				851703712833959000C8383D /* equalizer.json */,
 				859A7105282FA680009EB97F /* ReelData.swift */,
 			);
 			path = Model;
@@ -201,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851703722833959000C8383D /* equalizer.json in Resources */,
 				859A70FA282FA535009EB97F /* LaunchScreen.storyboard in Resources */,
 				859A70F7282FA535009EB97F /* Assets.xcassets in Resources */,
 			);
