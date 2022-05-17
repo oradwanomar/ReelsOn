@@ -10,7 +10,11 @@ import AVKit
 
 class ReelCollectionViewCell: UICollectionViewCell {
         
-    var reelData : ReelData?
+    var reelData : ReelData? {
+        didSet {
+            reelDetails.userName.text = reelData?.userName
+        }
+    }
     
     private let reelDetails : ReelDetailsView = {
         let reelDetails = ReelDetailsView()
@@ -33,7 +37,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
             reelDetails.leadingAnchor.constraint(equalTo: leadingAnchor),
             reelDetails.trailingAnchor.constraint(equalTo: trailingAnchor),
             reelDetails.bottomAnchor.constraint(equalTo: bottomAnchor),
-            reelDetails.heightAnchor.constraint(equalToConstant: 220),
+            reelDetails.heightAnchor.constraint(equalToConstant: 240),
         ])
     }
 }

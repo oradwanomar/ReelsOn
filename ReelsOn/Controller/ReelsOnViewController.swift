@@ -28,7 +28,7 @@ class ReelsOnViewController: UIViewController {
         return collectionview
     }()
     
-    var reels : [ReelData] = [ReelData(userName: "@omarradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "When the song is so hot 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song"),ReelData(userName: "@omarradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song")]
+    var reels : [ReelData] = [ReelData(userName: "@omarrrradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "When the song is so hot 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song"),ReelData(userName: "@omarradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song")]
 
     override func viewDidLoad() {
         super.viewDidLoad()

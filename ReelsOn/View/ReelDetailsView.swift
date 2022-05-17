@@ -61,16 +61,28 @@ class ReelDetailsView : UIView {
      var likeCountButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
+         let renderImage = UIImage(named: "like")?.withRenderingMode(.automatic).withTintColor(.white)
+         btn.setImage(renderImage, for: .normal)
         return btn
     }()
     
      var commentCountButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
+        let renderImage = UIImage(named: "dislike")?.withRenderingMode(.automatic).withTintColor(.white)
+        btn.setImage(renderImage, for: .normal)
         return btn
     }()
     
     lazy var equalizerView: AnimationView = {
+        let v = AnimationView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.animation = Animation.named("equalizer")
+        v.loopMode = .loop
+        v.play()
+        return v
+    }()
+    lazy var equalizerView2: AnimationView = {
         let v = AnimationView()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.animation = Animation.named("equalizer")
@@ -117,13 +129,24 @@ class ReelDetailsView : UIView {
         return usernameLabel
     }()
     
-    private let profileImage : UIImageView = {
+     let profileImage : UIImageView = {
         let profileImg = UIImageView()
         profileImg.backgroundColor = .white
         profileImg.translatesAutoresizingMaskIntoConstraints = false
         profileImg.layer.cornerRadius = 15
+        profileImg.image = UIImage(named: "1")
         profileImg.clipsToBounds = true
         return profileImg
+    }()
+    
+     let songImage : UIImageView = {
+        let songImg = UIImageView()
+        songImg.backgroundColor = .white
+        songImg.translatesAutoresizingMaskIntoConstraints = false
+        songImg.layer.cornerRadius = 10
+        songImg.image = UIImage(named: "1")
+        songImg.clipsToBounds = true
+        return songImg
     }()
     
     
@@ -153,9 +176,10 @@ class ReelDetailsView : UIView {
             stackView.addArrangedSubview($0)
         }
         addSubview(countView)
-        [likeCountButton,commentCountButton].forEach{countView.addSubview($0)}
+        [likeCountButton,commentCountButton,songImage].forEach{countView.addSubview($0)}
         [equalizerView,songMarqueeLabel,caption,profileView].forEach {addSubview($0)}
         [profileImage,userName].forEach{profileView.addSubview($0)}
+        songImage.addSubview(equalizerView2)
     }
     
     func setUpContsrains(){
@@ -163,30 +187,41 @@ class ReelDetailsView : UIView {
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             stackView.heightAnchor.constraint(equalToConstant: 35),
             stackView.widthAnchor.constraint(equalToConstant: 165),
-            stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             
-            countView.leadingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 10),
+            countView.leadingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 20),
             countView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            countView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            countView.heightAnchor.constraint(equalToConstant: 35),
+            countView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            countView.heightAnchor.constraint(equalToConstant: 100),
             
-            commentCountButton.centerYAnchor.constraint(equalTo: countView.centerYAnchor),
+            likeCountButton.topAnchor.constraint(equalTo: countView.topAnchor, constant: -50),
+            likeCountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            likeCountButton.heightAnchor.constraint(equalToConstant: 40),
+            
+            commentCountButton.topAnchor.constraint(equalTo: likeCountButton.bottomAnchor, constant: 10),
             commentCountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            likeCountButton.trailingAnchor.constraint(equalTo: commentCountButton.leadingAnchor, constant: -15),
-            likeCountButton.centerYAnchor.constraint(equalTo: countView.centerYAnchor),
+            songImage.bottomAnchor.constraint(equalTo: countView.bottomAnchor, constant: -25),
+            songImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            songImage.widthAnchor.constraint(equalToConstant: 30),
+            songImage.heightAnchor.constraint(equalToConstant: 30),
             
-            equalizerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            equalizerView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -6),
+            equalizerView2.leadingAnchor.constraint(equalTo: songImage.leadingAnchor),
+            equalizerView2.bottomAnchor.constraint(equalTo: songImage.bottomAnchor),
+            equalizerView2.widthAnchor.constraint(equalToConstant: 30),
+            equalizerView2.heightAnchor.constraint(equalToConstant: 30),
+            
+            equalizerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            equalizerView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -5),
             equalizerView.widthAnchor.constraint(equalToConstant: 35),
             equalizerView.heightAnchor.constraint(equalToConstant: 35),
             
-            songMarqueeLabel.leadingAnchor.constraint(equalTo: equalizerView.trailingAnchor, constant: -3),
+            songMarqueeLabel.leadingAnchor.constraint(equalTo: equalizerView.trailingAnchor, constant: -4),
             songMarqueeLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -15),
             songMarqueeLabel.widthAnchor.constraint(equalToConstant: 180),
             
             caption.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            caption.bottomAnchor.constraint(equalTo: songMarqueeLabel.topAnchor, constant: -10),
+            caption.bottomAnchor.constraint(equalTo: songMarqueeLabel.topAnchor, constant: -20),
             caption.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             profileView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
