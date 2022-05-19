@@ -11,7 +11,7 @@ import MarqueeLabel
 
 class ReelDetailsView : UIView {
     
-    private let stackView : UIStackView = {
+    lazy var stackView : UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .horizontal
