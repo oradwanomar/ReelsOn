@@ -59,6 +59,7 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReelCollectionViewCell", for: indexPath) as! ReelCollectionViewCell
         cell.reelData = reels[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -88,6 +89,18 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+    }
+    
+    
+}
+
+extension ReelsOnViewController : reelCellDelegate {
+    func hideWhenLongTouchBegan() {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    func showWhenLongTouchEnded() {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     
