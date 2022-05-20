@@ -11,6 +11,9 @@ import MarqueeLabel
 
 class ReelDetailsView : UIView {
     
+    // MARK: Proprities
+
+    
     lazy var stackView : UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
@@ -150,7 +153,7 @@ class ReelDetailsView : UIView {
     }()
     
     
-    //---------------------------------
+    // MARK: LifeCycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -169,6 +172,8 @@ class ReelDetailsView : UIView {
     override func layoutSubviews() {
         (layer as! CAGradientLayer).colors = [UIColor.clear.cgColor,UIColor.black.withAlphaComponent(0.7).cgColor]
     }
+    
+    // MARK: Helper
     
     func setUpViews(){
         addSubview(stackView)
