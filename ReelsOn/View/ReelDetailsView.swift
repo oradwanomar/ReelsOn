@@ -23,7 +23,7 @@ class ReelDetailsView : UIView {
         return sv
     }()
     
-    private let likebutton : UIButton = {
+     let likebutton : UIButton = {
         let likeBtn = UIButton()
         likeBtn.translatesAutoresizingMaskIntoConstraints = false
         likeBtn.setImage(UIImage(systemName: "heart"), for: .normal)

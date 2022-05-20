@@ -17,4 +17,5 @@ struct ReelData {
     let likesCount:Int?
     let commentsCount:Int?
     let songTitle:String?
+    let songImage:String?
 }

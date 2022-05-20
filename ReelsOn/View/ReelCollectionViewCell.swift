@@ -26,7 +26,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         
     var reelData : ReelData? {
         didSet {
-            reelDetails.userName.text = reelData?.userName
+            setUpReelData()
         }
     }
     
@@ -47,15 +47,15 @@ class ReelCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(reelDetails)
         addSubview(playerView)
+        addSubview(reelDetails)
         setUpConstrains()
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
         addGestureRecognizer(longPress)
         
-        let press = UIGestureRecognizer(target: self, action: #selector(press))
-        addGestureRecognizer(press)
+//        let press = UIGestureRecognizer(target: self, action: #selector(press))
+//        addGestureRecognizer(press)
     }
     
     required init?(coder: NSCoder) {
@@ -108,9 +108,33 @@ class ReelCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    @objc func press(gesture : UIGestureRecognizer){
-        if gesture.state == .began {
-            avQueuePlayer?.volume = 0
+//    @objc func press(gesture : UIGestureRecognizer){
+//        if gesture.state == .began {
+//            avQueuePlayer?.volume = 0
+//        }
+//    }
+    
+    func setUpReelData(){
+        guard let reelData = reelData else {return}
+        reelDetails.profileImage.image = UIImage(named: reelData.userImage!)
+        reelDetails.songImage.image = UIImage(named: reelData.songImage!)
+        if reelData.isLiked! {
+            reelDetails.likebutton.setImage(UIImage(named: "love")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        }else{
+            reelDetails.likebutton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
+        reelDetails.likebutton.imageView?.tintColor = reelData.isLiked! ? .red : .white
+        let attributedText = NSMutableAttributedString(string:"\(reelData.userName!)  ", attributes:[NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)])
+        if reelData.isVerified! {
+            let font = UIFont.systemFont(ofSize: 14, weight: .bold)
+            let verifiyImg = UIImage(named:"verify")?.withRenderingMode(.alwaysTemplate)
+                let verifiedImage = NSTextAttachment()
+                verifiedImage.image = verifiyImg?.withTintColor(.white)
+                verifiedImage.bounds = CGRect(x: 0, y: (font.capHeight - 13).rounded() / 2, width: 13, height: 13)
+                verifiedImage.setImageHeight(height: 13)
+                let imgString = NSAttributedString(attachment: verifiedImage)
+                attributedText.append(imgString)
+        }
+        reelDetails.userName.attributedText = attributedText
     }
 }

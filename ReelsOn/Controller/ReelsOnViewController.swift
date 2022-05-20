@@ -9,6 +9,8 @@ import UIKit
 
 class ReelsOnViewController: UIViewController {
     
+    var isPlay = false
+    var isMute = false
     
     lazy var collectionView : UICollectionView = {
         let collectionview = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout.init())
@@ -28,7 +30,7 @@ class ReelsOnViewController: UIViewController {
         return collectionview
     }()
     
-    var reels : [ReelData] = [ReelData(userName: "@omarrrradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "When the song is so hot 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song"),ReelData(userName: "@omarradwan037", userImage: "", video: "", isVerified: true, isLiked: true, caption: "", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song")]
+    var reels : [ReelData] = [ReelData(userName: "@omarrrradwan037", userImage: "1", video: "demo", isVerified: false, isLiked: true, caption: "When the song is so hot 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song", songImage: "demo1"),ReelData(userName: "@omarahmed10", userImage: "3", video: "video2", isVerified: true, isLiked: false, caption: "When the song is so beautiful woow ! 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song",songImage: "demo2")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,13 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReelCollectionViewCell", for: indexPath) as! ReelCollectionViewCell
         cell.reelData = reels[indexPath.row]
         cell.delegate = self
+        if let urlPath = Bundle.main.url(forResource: reels[indexPath.row].video, withExtension: "mp4"){
+            cell.setUpPlayer(url: urlPath, bounds: collectionView.frame)
+            if !isPlay{
+                cell.avQueuePlayer?.play()
+                isPlay = true
+            }
+        }
         return cell
     }
     
@@ -76,20 +85,35 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = ReelCollectionViewCell()
+        if isMute {
+            cell.avQueuePlayer?.volume = 0
+            isMute = false
+        }else{
+            isMute = true
+        }
         
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
+        collectionView.visibleCells.forEach { cell in
+            let cell = cell as! ReelCollectionViewCell
+            cell.avQueuePlayer?.pause()
+        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
+        collectionView.visibleCells.forEach { cell in
+            let cell = cell as! ReelCollectionViewCell
+            cell.avQueuePlayer?.play()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        let cell = cell as! ReelCollectionViewCell
+        cell.avQueuePlayer?.pause()
     }
+    
     
     
 }

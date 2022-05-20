@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0B40AC5244F299F0CE3C87F0 /* Pods_ReelsOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */; };
 		851703722833959000C8383D /* equalizer.json in Resources */ = {isa = PBXBuildFile; fileRef = 851703712833959000C8383D /* equalizer.json */; };
+		853F8A412838151600DDBC0D /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853F8A402838151500DDBC0D /* Extention.swift */; };
+		853F8A44283820B600DDBC0D /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 853F8A42283820B600DDBC0D /* demo.mp4 */; };
+		853F8A45283820B600DDBC0D /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 853F8A43283820B600DDBC0D /* video2.mp4 */; };
 		859A70EE282FA533009EB97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A70ED282FA533009EB97F /* AppDelegate.swift */; };
 		859A70F0282FA533009EB97F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A70EF282FA533009EB97F /* SceneDelegate.swift */; };
 		859A70F7282FA535009EB97F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859A70F6282FA535009EB97F /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReelsOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851703712833959000C8383D /* equalizer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equalizer.json; sourceTree = "<group>"; };
+		853F8A402838151500DDBC0D /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		853F8A42283820B600DDBC0D /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
+		853F8A43283820B600DDBC0D /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
 		859A70EA282FA533009EB97F /* ReelsOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelsOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A70ED282FA533009EB97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859A70EF282FA533009EB97F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		853F8A3F2838150400DDBC0D /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				853F8A402838151500DDBC0D /* Extention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		85691827FA255953DEC11805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +102,7 @@
 		859A70EC282FA533009EB97F /* ReelsOn */ = {
 			isa = PBXGroup;
 			children = (
+				853F8A3F2838150400DDBC0D /* Extentions */,
 				859A7111283001A0009EB97F /* Videos */,
 				859A7104282FA5DA009EB97F /* Base */,
 				859A7103282FA5CE009EB97F /* Controller */,
@@ -139,6 +154,8 @@
 		859A7111283001A0009EB97F /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				853F8A42283820B600DDBC0D /* demo.mp4 */,
+				853F8A43283820B600DDBC0D /* video2.mp4 */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -203,8 +220,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853F8A44283820B600DDBC0D /* demo.mp4 in Resources */,
 				851703722833959000C8383D /* equalizer.json in Resources */,
 				859A70FA282FA535009EB97F /* LaunchScreen.storyboard in Resources */,
+				853F8A45283820B600DDBC0D /* video2.mp4 in Resources */,
 				859A70F7282FA535009EB97F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853F8A412838151600DDBC0D /* Extention.swift in Sources */,
 				859A7108282FAB35009EB97F /* CustomNavigationViewController.swift in Sources */,
 				859A710E282FFF36009EB97F /* ReelDetailsView.swift in Sources */,
 				859A70EE282FA533009EB97F /* AppDelegate.swift in Sources */,
