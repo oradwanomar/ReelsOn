@@ -127,5 +127,17 @@ extension ReelsOnViewController : reelCellDelegate {
         self.navigationController?.navigationBar.isHidden = false
     }
     
+    func presentActionSheet() {
+        let alertSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let action1 = UIAlertAction(title: "Report", style: .destructive, handler: nil)
+        let action2 = UIAlertAction(title: "Not intersted", style: .destructive, handler: nil)
+        let action3 = UIAlertAction(title: "Save", style: .default, handler: nil)
+        let action4 = UIAlertAction(title: "copy link", style: .default, handler: nil)
+        let action5 = UIAlertAction(title: "Share to...", style: .default, handler: nil)
+        let action6 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        [action1,action2,action3,action4,action5,action6].forEach{alertSheet.addAction($0)}
+        present(alertSheet, animated: true, completion: nil)
+    }
+    
     
 }

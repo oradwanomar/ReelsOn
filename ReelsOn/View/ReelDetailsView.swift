@@ -47,7 +47,7 @@ class ReelDetailsView : UIView {
         return shareBtn
     }()
     
-    private let moreButton : UIButton = {
+     let moreButton : UIButton = {
         let moreBtn = UIButton()
         moreBtn.translatesAutoresizingMaskIntoConstraints = false
         moreBtn.setImage(UIImage(systemName: "ellipsis"), for: .normal)
@@ -67,6 +67,22 @@ class ReelDetailsView : UIView {
          let renderImage = UIImage(named: "like")?.withRenderingMode(.automatic).withTintColor(.white)
          btn.setImage(renderImage, for: .normal)
         return btn
+    }()
+    
+    var likes : UILabel = {
+        let likes = UILabel()
+        likes.text = "1.2k"
+        likes.tintColor = .white
+        likes.font = UIFont.boldSystemFont(ofSize: 12)
+        return likes
+    }()
+    
+    var dislikes : UILabel = {
+        let dislikes = UILabel()
+        dislikes.text = "546"
+        dislikes.tintColor = .white
+        dislikes.font = UIFont.boldSystemFont(ofSize: 12)
+        return dislikes
     }()
     
      var commentCountButton: UIButton = {
@@ -175,13 +191,15 @@ class ReelDetailsView : UIView {
     
     // MARK: Helper
     
+  
+    
     func setUpViews(){
         addSubview(stackView)
         [likebutton,commentButton,shareButton,moreButton].forEach {
             stackView.addArrangedSubview($0)
         }
         addSubview(countView)
-        [likeCountButton,commentCountButton,songImage].forEach{countView.addSubview($0)}
+        [likeCountButton,likes,commentCountButton,dislikes,songImage].forEach{countView.addSubview($0)}
         [equalizerView,songMarqueeLabel,caption,profileView].forEach {addSubview($0)}
         [profileImage,userName].forEach{profileView.addSubview($0)}
         songImage.addSubview(equalizerView2)
@@ -210,6 +228,7 @@ class ReelDetailsView : UIView {
             songImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             songImage.widthAnchor.constraint(equalToConstant: 30),
             songImage.heightAnchor.constraint(equalToConstant: 30),
+            
             
             equalizerView2.leadingAnchor.constraint(equalTo: songImage.leadingAnchor),
             equalizerView2.bottomAnchor.constraint(equalTo: songImage.bottomAnchor),
@@ -246,7 +265,7 @@ class ReelDetailsView : UIView {
         ])
     }
     
-    
+   
     
     
     

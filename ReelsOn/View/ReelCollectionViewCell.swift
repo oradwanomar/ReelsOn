@@ -12,6 +12,7 @@ import AVKit
 protocol reelCellDelegate {
     func hideWhenLongTouchBegan()
     func showWhenLongTouchEnded()
+    func presentActionSheet()
 }
 
 class ReelCollectionViewCell: UICollectionViewCell {
@@ -54,8 +55,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
         addGestureRecognizer(longPress)
         
-//        let press = UIGestureRecognizer(target: self, action: #selector(press))
-//        addGestureRecognizer(press)
+        reelDetails.moreButton.addTarget(self, action: #selector(showAlertSheet), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -108,11 +108,10 @@ class ReelCollectionViewCell: UICollectionViewCell {
         }
     }
     
-//    @objc func press(gesture : UIGestureRecognizer){
-//        if gesture.state == .began {
-//            avQueuePlayer?.volume = 0
-//        }
-//    }
+    @objc func showAlertSheet(){
+        delegate?.presentActionSheet()
+    }
+
     
     func setUpReelData(){
         guard let reelData = reelData else {return}
