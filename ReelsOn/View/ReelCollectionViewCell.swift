@@ -100,13 +100,12 @@ class ReelCollectionViewCell: UICollectionViewCell {
                              width: size,
                              height: size)
         gestureView.addSubview(heart)
-        
+        self.reelData?.isLiked = true
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             UIView.animate(withDuration: 0.5) {
                 heart.alpha = 0
             } completion: { done in
                 if done {heart.removeFromSuperview()
-                    self.reelData?.isLiked = true
                 }
             }
 
