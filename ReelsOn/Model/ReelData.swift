@@ -12,7 +12,7 @@ struct ReelData {
     let userImage:String?
     let video:String?
     let isVerified:Bool?
-    let isLiked:Bool?
+    var isLiked:Bool?
     let caption:String?
     let likesCount:Int?
     let commentsCount:Int?

@@ -34,6 +34,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
     let playerView : UIView = {
         let pv = UIView()
         pv.translatesAutoresizingMaskIntoConstraints = false
+        pv.isUserInteractionEnabled = true
         return pv
     }()
     
@@ -54,6 +55,10 @@ class ReelCollectionViewCell: UICollectionViewCell {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
         addGestureRecognizer(longPress)
+        
+        let doubletap = UITapGestureRecognizer(target: self, action: #selector(doubleTap(_:)))
+        doubletap.numberOfTapsRequired = 2
+        addGestureRecognizer(doubletap)
         
         reelDetails.moreButton.addTarget(self, action: #selector(showAlertSheet), for: .touchUpInside)
     }
@@ -85,7 +90,30 @@ class ReelCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    @objc func longPressAction(gesture : UILongPressGestureRecognizer){
+    @objc func doubleTap(_ gesture : UIGestureRecognizer){
+        guard let gestureView = gesture.view else {return}
+        let size = gestureView.frame.width / 4
+        let heart = UIImageView(image: UIImage(systemName: "heart.fill"))
+        heart.tintColor = .red
+        heart.frame = CGRect(x: (gestureView.frame.width-size)/2,
+                             y: (gestureView.frame.height-size)/2,
+                             width: size,
+                             height: size)
+        gestureView.addSubview(heart)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            UIView.animate(withDuration: 0.5) {
+                heart.alpha = 0
+            } completion: { done in
+                if done {heart.removeFromSuperview()
+                    self.reelData?.isLiked = true
+                }
+            }
+
+        }
+    }
+    
+    @objc func longPressAction(_ gesture : UILongPressGestureRecognizer){
         if gesture.state == .began {
             avQueuePlayer?.pause()
             delegate?.hideWhenLongTouchBegan()

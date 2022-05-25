@@ -30,7 +30,7 @@ class ReelsOnViewController: UIViewController {
         return collectionview
     }()
     
-    var reels : [ReelData] = [ReelData(userName: "@omarrrradwan037", userImage: "1", video: "demo", isVerified: false, isLiked: true, caption: "When the song is so hot 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song", songImage: "demo1"),ReelData(userName: "@omarahmed10", userImage: "3", video: "video2", isVerified: true, isLiked: false, caption: "When the song is so beautiful woow ! 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song",songImage: "demo2")]
+    var reels : [ReelData] = [ReelData(userName: "@omarahmed10", userImage: "3", video: "video2", isVerified: true, isLiked: false, caption: "When the song is so beautiful woow ! 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song",songImage: "demo2"),ReelData(userName: "@omarrrradwan037", userImage: "1", video: "demo", isVerified: false, isLiked: true, caption: "When the song is so hot 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song", songImage: "demo1")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,13 +85,7 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = ReelCollectionViewCell()
-        if isMute {
-            cell.avQueuePlayer?.volume = 0
-            isMute = false
-        }else{
-            isMute = true
-        }
+       
         
     }
     
@@ -105,6 +99,7 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         collectionView.visibleCells.forEach { cell in
             let cell = cell as! ReelCollectionViewCell
+            cell.avQueuePlayer?.seek(to: .zero)
             cell.avQueuePlayer?.play()
         }
     }
@@ -119,6 +114,7 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
 }
 
 extension ReelsOnViewController : reelCellDelegate {
+    
     func hideWhenLongTouchBegan() {
         self.navigationController?.navigationBar.isHidden = true
     }
