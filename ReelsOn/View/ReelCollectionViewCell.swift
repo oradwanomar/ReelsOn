@@ -111,7 +111,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         gestureView.addSubview(heart)
         self.reelData?.isLiked = true
         
-            UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 1.4) {
                 heart.alpha = 0
             } completion: { done in
                 if done {heart.removeFromSuperview()
@@ -166,7 +166,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         if gesture.state == .began {
             avQueuePlayer?.pause()
             delegate?.hideWhenLongTouchBegan()
-            UIView.animate(withDuration: 0.3){
+            UIView.animate(withDuration: 0.4){
                 DispatchQueue.main.async {
                     self.reelDetails.alpha = 0
 
@@ -176,7 +176,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         if gesture.state == .ended {
             avQueuePlayer?.play()
             delegate?.showWhenLongTouchEnded()
-            UIView.animate(withDuration: 0.3){
+            UIView.animate(withDuration: 0.4){
                 DispatchQueue.main.async {
                     self.reelDetails.alpha = 1
 
