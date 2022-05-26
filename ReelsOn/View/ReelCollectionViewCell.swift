@@ -88,7 +88,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
             reelDetails.leadingAnchor.constraint(equalTo: leadingAnchor),
             reelDetails.trailingAnchor.constraint(equalTo: trailingAnchor),
             reelDetails.bottomAnchor.constraint(equalTo: bottomAnchor),
-            reelDetails.heightAnchor.constraint(equalToConstant: 245),
+            reelDetails.heightAnchor.constraint(equalToConstant: 240),
             
             playerView.leadingAnchor.constraint(equalTo: playerView.leadingAnchor),
             playerView.trailingAnchor.constraint(equalTo: playerView.trailingAnchor),
