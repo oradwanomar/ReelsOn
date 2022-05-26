@@ -104,7 +104,7 @@ class ReelDetailsView : UIView {
     lazy var equalizerView2: AnimationView = {
         let v = AnimationView()
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.animation = Animation.named("equalizer")
+        v.animation = Animation.named("equaliser")
         v.loopMode = .loop
         v.play()
         return v
