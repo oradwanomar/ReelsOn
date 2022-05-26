@@ -23,6 +23,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
     var avQueuePlayer : AVQueuePlayer?
     var avplayerLayer : AVPlayerLayer?
     var delegate :reelCellDelegate?
+    var isMuted = false
     
         
     var reelData : ReelData? {
@@ -59,6 +60,9 @@ class ReelCollectionViewCell: UICollectionViewCell {
         let doubletap = UITapGestureRecognizer(target: self, action: #selector(doubleTap(_:)))
         doubletap.numberOfTapsRequired = 2
         addGestureRecognizer(doubletap)
+        
+        let onetap = UITapGestureRecognizer(target: self, action: #selector(muteTap(_:)))
+        addGestureRecognizer(onetap)
         
         reelDetails.moreButton.addTarget(self, action: #selector(showAlertSheet), for: .touchUpInside)
     }
@@ -101,7 +105,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
                              height: size)
         gestureView.addSubview(heart)
         self.reelData?.isLiked = true
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+        
             UIView.animate(withDuration: 0.5) {
                 heart.alpha = 0
             } completion: { done in
@@ -109,6 +113,46 @@ class ReelCollectionViewCell: UICollectionViewCell {
                 }
             }
 
+        
+    }
+    
+    @objc func muteTap(_ gesture:UIGestureRecognizer){
+        isMuted = !isMuted
+        guard let gestureView = gesture.view else {return}
+        let size = gestureView.frame.width / 4 + 25
+        let mute = UIImageView(image: UIImage(systemName: "antenna.radiowaves.left.and.right.slash"))
+        mute.tintColor = .white
+        mute.frame = CGRect(x: (gestureView.frame.width-size)/2,
+                             y: (gestureView.frame.height-size)/2,
+                             width: size,
+                             height: size)
+        
+        let unmute = UIImageView(image: UIImage(systemName: "antenna.radiowaves.left.and.right"))
+        unmute.tintColor = .white
+        unmute.frame = CGRect(x: (gestureView.frame.width-size)/2,
+                             y: (gestureView.frame.height-size)/2,
+                             width: size,
+                             height: size)
+                
+        if isMuted {
+            gestureView.addSubview(mute)
+            avQueuePlayer?.isMuted = true
+            UIView.animate(withDuration: 0.5) {
+                mute.alpha = 0
+            } completion: { done in
+                if done {mute.removeFromSuperview()
+                }
+            }
+            
+        }else {
+            gestureView.addSubview(unmute)
+            avQueuePlayer?.isMuted = false
+            UIView.animate(withDuration: 0.5) {
+                unmute.alpha = 0
+            } completion: { done in
+                if done {unmute.removeFromSuperview()
+                }
+            }
         }
     }
     
@@ -144,6 +188,8 @@ class ReelCollectionViewCell: UICollectionViewCell {
         guard let reelData = reelData else {return}
         reelDetails.profileImage.image = UIImage(named: reelData.userImage!)
         reelDetails.songImage.image = UIImage(named: reelData.songImage!)
+        reelDetails.caption.text = reelData.caption
+        reelDetails.songMarqueeLabel.text = reelData.songTitle
         if reelData.isLiked! {
             reelDetails.likebutton.setImage(UIImage(named: "love")?.withRenderingMode(.alwaysTemplate), for: .normal)
         }else{
