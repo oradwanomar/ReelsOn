@@ -103,7 +103,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         guard let gestureView = gesture.view else {return}
         let size = gestureView.frame.width / 4
         let heart = UIImageView(image: UIImage(systemName: "heart.fill"))
-        heart.tintColor = .systemRed
+        heart.tintColor = .white
         heart.frame = CGRect(x: (gestureView.frame.width-size - 25)/2,
                              y: (gestureView.frame.height-size)/2,
                              width: size + 25,

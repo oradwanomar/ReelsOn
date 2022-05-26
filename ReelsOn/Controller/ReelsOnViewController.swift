@@ -41,6 +41,7 @@ class ReelsOnViewController: UIViewController {
         setUpConstrains()
     }
     
+    
     func setUpConstrains(){
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
