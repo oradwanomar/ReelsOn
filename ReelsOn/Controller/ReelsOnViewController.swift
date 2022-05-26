@@ -113,6 +113,26 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     
 }
 
+extension ReelsOnViewController {
+    func showToast(message : String, font: UIFont) {
+
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2-75, y: self.view.frame.size.height-300, width: 150, height: 40))
+        toastLabel.backgroundColor = .label
+        toastLabel.textColor = .systemBackground
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.layer.cornerRadius = 8;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 5.0, delay: 0.5, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+}
+
 extension ReelsOnViewController : reelCellDelegate {
     
     func hideWhenLongTouchBegan() {
@@ -127,8 +147,12 @@ extension ReelsOnViewController : reelCellDelegate {
         let alertSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: "Report", style: .destructive, handler: nil)
         let action2 = UIAlertAction(title: "Not intersted", style: .destructive, handler: nil)
-        let action3 = UIAlertAction(title: "Save", style: .default, handler: nil)
-        let action4 = UIAlertAction(title: "copy link", style: .default, handler: nil)
+        let action3 = UIAlertAction(title: "Save", style: .default) { _ in
+            self.showToast(message: "Saved", font: UIFont.systemFont(ofSize: 15))
+        }
+        let action4 = UIAlertAction(title: "copy link", style: .default) { _ in
+            self.showToast(message: "Copied", font: UIFont.systemFont(ofSize: 15))
+        }
         let action5 = UIAlertAction(title: "Share to...", style: .default, handler: nil)
         let action6 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         [action1,action2,action3,action4,action5,action6].forEach{alertSheet.addAction($0)}
@@ -137,3 +161,4 @@ extension ReelsOnViewController : reelCellDelegate {
     
     
 }
+

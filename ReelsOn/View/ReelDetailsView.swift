@@ -42,7 +42,7 @@ class ReelDetailsView : UIView {
     private let shareButton : UIButton = {
         let shareBtn = UIButton()
         shareBtn.translatesAutoresizingMaskIntoConstraints = false
-        shareBtn.setImage(UIImage(systemName: "location"), for: .normal)
+        shareBtn.setImage(UIImage(systemName: "arrowshape.turn.up.forward"), for: .normal)
         shareBtn.tintColor = .white
         return shareBtn
     }()
@@ -59,14 +59,6 @@ class ReelDetailsView : UIView {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
-    }()
-    
-     var likeCountButton: UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-         let renderImage = UIImage(named: "like")?.withRenderingMode(.automatic).withTintColor(.white)
-         btn.setImage(renderImage, for: .normal)
-        return btn
     }()
     
     var likes : UILabel = {
@@ -88,7 +80,7 @@ class ReelDetailsView : UIView {
      var commentCountButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        let renderImage = UIImage(named: "dislike")?.withRenderingMode(.automatic).withTintColor(.white)
+        let renderImage = UIImage(named: "share")?.withRenderingMode(.automatic).withTintColor(.white)
         btn.setImage(renderImage, for: .normal)
         return btn
     }()
@@ -199,7 +191,7 @@ class ReelDetailsView : UIView {
             stackView.addArrangedSubview($0)
         }
         addSubview(countView)
-        [likeCountButton,likes,commentCountButton,dislikes,songImage].forEach{countView.addSubview($0)}
+        [commentCountButton,songImage].forEach{countView.addSubview($0)}
         [equalizerView,songMarqueeLabel,caption,profileView].forEach {addSubview($0)}
         [profileImage,userName].forEach{profileView.addSubview($0)}
         songImage.addSubview(equalizerView2)
@@ -217,11 +209,7 @@ class ReelDetailsView : UIView {
             countView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             countView.heightAnchor.constraint(equalToConstant: 100),
             
-            likeCountButton.topAnchor.constraint(equalTo: countView.topAnchor, constant: -50),
-            likeCountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            likeCountButton.heightAnchor.constraint(equalToConstant: 40),
-            
-            commentCountButton.topAnchor.constraint(equalTo: likeCountButton.bottomAnchor, constant: 10),
+            commentCountButton.bottomAnchor.constraint(equalTo: songImage.topAnchor, constant: -20),
             commentCountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             songImage.bottomAnchor.constraint(equalTo: countView.bottomAnchor, constant: -25),

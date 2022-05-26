@@ -64,6 +64,9 @@ class ReelCollectionViewCell: UICollectionViewCell {
         let onetap = UITapGestureRecognizer(target: self, action: #selector(muteTap(_:)))
         addGestureRecognizer(onetap)
         
+        
+        onetap.require(toFail: doubletap) // singleTap doesn't effect on doubleTap
+        
         reelDetails.moreButton.addTarget(self, action: #selector(showAlertSheet), for: .touchUpInside)
     }
     
@@ -94,19 +97,21 @@ class ReelCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    
+    
     @objc func doubleTap(_ gesture : UIGestureRecognizer){
         guard let gestureView = gesture.view else {return}
-        let size = gestureView.frame.width / 4 + 25
+        let size = gestureView.frame.width / 4
         let heart = UIImageView(image: UIImage(systemName: "heart.fill"))
         heart.tintColor = .systemRed
-        heart.frame = CGRect(x: (gestureView.frame.width-size)/2,
+        heart.frame = CGRect(x: (gestureView.frame.width-size - 25)/2,
                              y: (gestureView.frame.height-size)/2,
-                             width: size,
+                             width: size + 25,
                              height: size)
         gestureView.addSubview(heart)
         self.reelData?.isLiked = true
         
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 1) {
                 heart.alpha = 0
             } completion: { done in
                 if done {heart.removeFromSuperview()
@@ -119,7 +124,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
     @objc func muteTap(_ gesture:UIGestureRecognizer){
         isMuted = !isMuted
         guard let gestureView = gesture.view else {return}
-        let size = gestureView.frame.width / 4 + 25
+        let size = gestureView.frame.width / 4
         let mute = UIImageView(image: UIImage(systemName: "antenna.radiowaves.left.and.right.slash"))
         mute.tintColor = .white
         mute.frame = CGRect(x: (gestureView.frame.width-size)/2,
@@ -137,7 +142,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         if isMuted {
             gestureView.addSubview(mute)
             avQueuePlayer?.isMuted = true
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.7) {
                 mute.alpha = 0
             } completion: { done in
                 if done {mute.removeFromSuperview()
@@ -147,7 +152,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         }else {
             gestureView.addSubview(unmute)
             avQueuePlayer?.isMuted = false
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.7) {
                 unmute.alpha = 0
             } completion: { done in
                 if done {unmute.removeFromSuperview()
