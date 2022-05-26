@@ -65,7 +65,7 @@ class ReelDetailsView : UIView {
         let likes = UILabel()
         likes.text = "1.2k"
         likes.tintColor = .white
-        likes.font = UIFont.boldSystemFont(ofSize: 12)
+        likes.font = UIFont.boldSystemFont(ofSize: 15)
         return likes
     }()
     
@@ -73,7 +73,7 @@ class ReelDetailsView : UIView {
         let dislikes = UILabel()
         dislikes.text = "546"
         dislikes.tintColor = .white
-        dislikes.font = UIFont.boldSystemFont(ofSize: 12)
+        dislikes.font = UIFont.boldSystemFont(ofSize: 15)
         return dislikes
     }()
     
