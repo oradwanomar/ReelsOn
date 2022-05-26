@@ -151,7 +151,8 @@ class ReelCollectionViewCell: UICollectionViewCell {
             
         }else {
             gestureView.addSubview(unmute)
-            avQueuePlayer?.isMuted = false
+            avQueuePlayer?.isMuted = true
+            
             UIView.animate(withDuration: 0.7) {
                 unmute.alpha = 0
             } completion: { done in
