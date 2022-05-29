@@ -155,7 +155,7 @@ class ReelDetailsView : UIView {
         songImg.backgroundColor = .white
         songImg.translatesAutoresizingMaskIntoConstraints = false
         songImg.layer.cornerRadius = 10
-        songImg.image = UIImage(named: "2")
+        songImg.image = UIImage(named: "1")
         songImg.clipsToBounds = true
         return songImg
     }()
