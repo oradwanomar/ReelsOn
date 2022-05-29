@@ -125,14 +125,14 @@ class ReelCollectionViewCell: UICollectionViewCell {
         isMuted = !isMuted
         guard let gestureView = gesture.view else {return}
         let size = gestureView.frame.width / 4
-        let mute = UIImageView(image: UIImage(systemName: "antenna.radiowaves.left.and.right.slash"))
+        let mute = UIImageView(image: UIImage(named: "mute"))
         mute.tintColor = .white
         mute.frame = CGRect(x: (gestureView.frame.width-size)/2,
                              y: (gestureView.frame.height-size)/2,
                              width: size,
                              height: size)
         
-        let unmute = UIImageView(image: UIImage(systemName: "antenna.radiowaves.left.and.right"))
+        let unmute = UIImageView(image: UIImage(named: "unmute"))
         unmute.tintColor = .white
         unmute.frame = CGRect(x: (gestureView.frame.width-size)/2,
                              y: (gestureView.frame.height-size)/2,
