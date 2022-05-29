@@ -24,6 +24,7 @@ class CustomNavigationViewController : UINavigationController {
         if let image = getImageFrom(gradientLayer: gradient) {
             navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
         }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: self, action: nil)
     }
 
     func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
