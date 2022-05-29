@@ -65,7 +65,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         addGestureRecognizer(onetap)
         
         
-        onetap.require(toFail: doubletap) // singleTap doesn't effect on doubleTap
+        onetap.require(toFail: doubletap) // doubleTap doesn't effect on singleTap
         
         reelDetails.moreButton.addTarget(self, action: #selector(showAlertSheet), for: .touchUpInside)
     }
