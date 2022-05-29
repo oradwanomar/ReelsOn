@@ -124,7 +124,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
     @objc func muteTap(_ gesture:UIGestureRecognizer){
         isMuted = !isMuted
         guard let gestureView = gesture.view else {return}
-        let size = gestureView.frame.width / 4
+        let size = gestureView.frame.width 
         let mute = UIImageView(image: UIImage(named: "mute"))
         mute.tintColor = .white
         mute.frame = CGRect(x: (gestureView.frame.width-size)/2,
