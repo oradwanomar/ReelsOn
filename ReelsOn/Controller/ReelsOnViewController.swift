@@ -93,10 +93,10 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        collectionView.visibleCells.forEach { cell in
-            let cell = cell as! ReelCollectionViewCell
-            cell.avQueuePlayer?.pause()
-        }
+//        collectionView.visibleCells.forEach { cell in
+//            let cell = cell as! ReelCollectionViewCell
+//            cell.avQueuePlayer?.pause()
+//        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
