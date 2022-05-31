@@ -30,8 +30,6 @@ class ReelsOnViewController: UIViewController {
         return collectionview
     }()
     
-    
-    
     var reels : [ReelData] = [ReelData(userName: "@markJones", userImage: "1", video: "demo2", isVerified: false, isLiked: false, caption: "That's amazing romantic song 💞🤩🎼", likesCount: 834, commentsCount: 443, songTitle: "Faouzia & John Legend - Minefields", songImage: "demo2"),ReelData(userName: "@omarahmed10", userImage: "3", video: "video2", isVerified: true, isLiked: false, caption: "When the song is so beautiful woow ! 😱", likesCount: 9, commentsCount: 6, songTitle: "Adele - Skyfull, James bond film song",songImage: "demo2"),ReelData(userName: "@moraradwan11", userImage: "2", video: "demo1", isVerified: true, isLiked: false, caption: "I'm really love this amzing song ❤️😭", likesCount: 223, commentsCount: 34, songTitle: "Ashes - Celien Dion from DeadPool 2", songImage: "demo2"),ReelData(userName: "@omarahmed10", userImage: "3", video: "demo3", isVerified: true, isLiked: true, caption: "what a song from this amazing band 🎸🥁❤️", likesCount: 948, commentsCount: 574, songTitle: "The Score - Stronger (Original)", songImage: "demo1")]
 
     override func viewDidLoad() {
@@ -95,10 +93,10 @@ extension ReelsOnViewController : UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        collectionView.visibleCells.forEach { cell in
-            let cell = cell as! ReelCollectionViewCell
-            cell.avQueuePlayer?.pause()
-        }
+//        collectionView.visibleCells.forEach { cell in
+//            let cell = cell as! ReelCollectionViewCell
+//            cell.avQueuePlayer?.pause()
+//        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
