@@ -24,7 +24,8 @@ class ReelCollectionViewCell: UICollectionViewCell {
     var avplayerLayer : AVPlayerLayer?
     var delegate :reelCellDelegate?
     var isMuted = false
-    
+    var pause = false
+
         
     var reelData : ReelData? {
         didSet {
@@ -111,7 +112,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         gestureView.addSubview(heart)
         self.reelData?.isLiked = true
         
-        UIView.animate(withDuration: 1.5) {
+        UIView.animate(withDuration: 2) {
                 heart.alpha = 0
             } completion: { done in
                 if done {heart.removeFromSuperview()
@@ -142,7 +143,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         if isMuted {
             gestureView.addSubview(mute)
             avQueuePlayer?.isMuted = true
-            UIView.animate(withDuration: 0.7) {
+            UIView.animate(withDuration: 1) {
                 mute.alpha = 0
             } completion: { done in
                 if done {mute.removeFromSuperview()
@@ -153,7 +154,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
             gestureView.addSubview(unmute)
             avQueuePlayer?.isMuted = false
             
-            UIView.animate(withDuration: 0.7) {
+            UIView.animate(withDuration: 1) {
                 unmute.alpha = 0
             } completion: { done in
                 if done {unmute.removeFromSuperview()

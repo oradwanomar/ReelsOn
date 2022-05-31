@@ -12,7 +12,6 @@ import MarqueeLabel
 class ReelDetailsView : UIView {
     
     // MARK: Proprities
-
     
     lazy var stackView : UIStackView = {
         let sv = UIStackView()
@@ -77,13 +76,15 @@ class ReelDetailsView : UIView {
         return dislikes
     }()
     
-     var commentCountButton: UIButton = {
+     var forwardToButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         let renderImage = UIImage(named: "share")?.withRenderingMode(.automatic).withTintColor(.white)
         btn.setImage(renderImage, for: .normal)
         return btn
     }()
+ 
+    
     
     lazy var equalizerView: AnimationView = {
         let v = AnimationView()
@@ -191,7 +192,7 @@ class ReelDetailsView : UIView {
             stackView.addArrangedSubview($0)
         }
         addSubview(countView)
-        [commentCountButton,songImage].forEach{countView.addSubview($0)}
+        [forwardToButton,songImage].forEach{countView.addSubview($0)}
         [equalizerView,songMarqueeLabel,caption,profileView].forEach {addSubview($0)}
         [profileImage,userName].forEach{profileView.addSubview($0)}
         songImage.addSubview(equalizerView2)
@@ -209,8 +210,8 @@ class ReelDetailsView : UIView {
             countView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             countView.heightAnchor.constraint(equalToConstant: 100),
             
-            commentCountButton.bottomAnchor.constraint(equalTo: songImage.topAnchor, constant: -20),
-            commentCountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            forwardToButton.bottomAnchor.constraint(equalTo: songImage.topAnchor, constant: -20),
+            forwardToButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             songImage.bottomAnchor.constraint(equalTo: countView.bottomAnchor, constant: -25),
             songImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
