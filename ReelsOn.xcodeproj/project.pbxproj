@@ -25,6 +25,8 @@
 		859A710A282FB2DC009EB97F /* ReelsOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A7109282FB2DC009EB97F /* ReelsOnViewController.swift */; };
 		859A710E282FFF36009EB97F /* ReelDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A710D282FFF36009EB97F /* ReelDetailsView.swift */; };
 		859A7110283000A0009EB97F /* ReelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A710F283000A0009EB97F /* ReelCollectionViewCell.swift */; };
+		85ACC49F284B1EAA00FF46A8 /* like.json in Resources */ = {isa = PBXBuildFile; fileRef = 85ACC49E284B1EAA00FF46A8 /* like.json */; };
+		85ACC4A1284B1EBA00FF46A8 /* like2.json in Resources */ = {isa = PBXBuildFile; fileRef = 85ACC4A0284B1EBA00FF46A8 /* like2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		859A7109282FB2DC009EB97F /* ReelsOnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsOnViewController.swift; sourceTree = "<group>"; };
 		859A710D282FFF36009EB97F /* ReelDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelDetailsView.swift; sourceTree = "<group>"; };
 		859A710F283000A0009EB97F /* ReelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelCollectionViewCell.swift; sourceTree = "<group>"; };
+		85ACC49E284B1EAA00FF46A8 /* like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = like.json; sourceTree = "<group>"; };
+		85ACC4A0284B1EBA00FF46A8 /* like2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = like2.json; sourceTree = "<group>"; };
 		90161BE0880187497D8D71F5 /* Pods-ReelsOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReelsOn.debug.xcconfig"; path = "Target Support Files/Pods-ReelsOn/Pods-ReelsOn.debug.xcconfig"; sourceTree = "<group>"; };
 		D1E862A206B70D4D5593E902 /* Pods-ReelsOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReelsOn.release.xcconfig"; path = "Target Support Files/Pods-ReelsOn/Pods-ReelsOn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,8 @@
 		859A7101282FA5BC009EB97F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				85ACC49E284B1EAA00FF46A8 /* like.json */,
+				85ACC4A0284B1EBA00FF46A8 /* like2.json */,
 				851703712833959000C8383D /* equalizer.json */,
 				85716AF0283F2DB800FDAF61 /* equaliser.json */,
 				859A7105282FA680009EB97F /* ReelData.swift */,
@@ -238,8 +244,10 @@
 				851703722833959000C8383D /* equalizer.json in Resources */,
 				859A70FA282FA535009EB97F /* LaunchScreen.storyboard in Resources */,
 				853F8A45283820B600DDBC0D /* video2.mp4 in Resources */,
+				85ACC4A1284B1EBA00FF46A8 /* like2.json in Resources */,
 				85716AEB283F241C00FDAF61 /* demo1.mp4 in Resources */,
 				859A70F7282FA535009EB97F /* Assets.xcassets in Resources */,
+				85ACC49F284B1EAA00FF46A8 /* like.json in Resources */,
 				85716AED283F242600FDAF61 /* demo2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
