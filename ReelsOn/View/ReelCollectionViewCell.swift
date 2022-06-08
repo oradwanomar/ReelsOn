@@ -113,7 +113,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
         self.reelData?.isLiked = true
         
         UIView.animate(withDuration: 2) {
-            
+
                 heart.alpha = 0
             } completion: { done in
                 if done {heart.removeFromSuperview()
