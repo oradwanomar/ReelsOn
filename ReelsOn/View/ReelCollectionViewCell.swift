@@ -110,7 +110,6 @@ class ReelCollectionViewCell: UICollectionViewCell {
                              width: size + 25,
                              height: size)
         gestureView.addSubview(heart)
-        
         self.reelData?.isLiked = true
         
         UIView.animate(withDuration: 2) {
