@@ -248,7 +248,7 @@ class ReelDetailsView : UIView {
             profileImage.heightAnchor.constraint(equalToConstant: 30),
             
             userName.centerYAnchor.constraint(equalTo: profileView.centerYAnchor),
-            userName.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 10)
+            userName.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 10),
             
             
         ])
