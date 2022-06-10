@@ -126,6 +126,7 @@ class ReelDetailsView : UIView {
         return caption
     }()
     
+    
     private let profileView : UIView = {
         let pv = UIView()
         pv.translatesAutoresizingMaskIntoConstraints = false
