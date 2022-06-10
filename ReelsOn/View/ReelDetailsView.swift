@@ -125,7 +125,6 @@ class ReelDetailsView : UIView {
         caption.font = UIFont.preferredFont(forTextStyle: .footnote)
         return caption
     }()
-
     
     private let profileView : UIView = {
         let pv = UIView()
