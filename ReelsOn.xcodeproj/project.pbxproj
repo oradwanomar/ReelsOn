@@ -10,7 +10,6 @@
 		0B40AC5244F299F0CE3C87F0 /* Pods_ReelsOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */; };
 		851703722833959000C8383D /* equalizer.json in Resources */ = {isa = PBXBuildFile; fileRef = 851703712833959000C8383D /* equalizer.json */; };
 		853F8A412838151600DDBC0D /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853F8A402838151500DDBC0D /* Extention.swift */; };
-		853F8A44283820B600DDBC0D /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 853F8A42283820B600DDBC0D /* demo.mp4 */; };
 		853F8A45283820B600DDBC0D /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 853F8A43283820B600DDBC0D /* video2.mp4 */; };
 		85716AEB283F241C00FDAF61 /* demo1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 85716AEA283F241C00FDAF61 /* demo1.mp4 */; };
 		85716AED283F242600FDAF61 /* demo2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 85716AEC283F242600FDAF61 /* demo2.mp4 */; };
@@ -33,7 +32,6 @@
 		15C70CE92DFC984A0FA98FBE /* Pods_ReelsOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReelsOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851703712833959000C8383D /* equalizer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equalizer.json; sourceTree = "<group>"; };
 		853F8A402838151500DDBC0D /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
-		853F8A42283820B600DDBC0D /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
 		853F8A43283820B600DDBC0D /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
 		85716AEA283F241C00FDAF61 /* demo1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo1.mp4; sourceTree = "<group>"; };
 		85716AEC283F242600FDAF61 /* demo2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo2.mp4; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		859A7111283001A0009EB97F /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				853F8A42283820B600DDBC0D /* demo.mp4 */,
 				853F8A43283820B600DDBC0D /* video2.mp4 */,
 				85716AEA283F241C00FDAF61 /* demo1.mp4 */,
 				85716AEC283F242600FDAF61 /* demo2.mp4 */,
@@ -240,7 +237,6 @@
 			files = (
 				85716AEF283F243100FDAF61 /* demo3.mp4 in Resources */,
 				85716AF1283F2DB800FDAF61 /* equaliser.json in Resources */,
-				853F8A44283820B600DDBC0D /* demo.mp4 in Resources */,
 				851703722833959000C8383D /* equalizer.json in Resources */,
 				859A70FA282FA535009EB97F /* LaunchScreen.storyboard in Resources */,
 				853F8A45283820B600DDBC0D /* video2.mp4 in Resources */,
