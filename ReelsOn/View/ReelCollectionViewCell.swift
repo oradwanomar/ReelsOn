@@ -104,9 +104,9 @@ class ReelCollectionViewCell: UICollectionViewCell {
         guard let gestureView = gesture.view else {return}
         let size = gestureView.frame.width / 4
         let heart = UIImageView(image: UIImage(named: "love")?.withRenderingMode(.automatic).withTintColor(.white))
-        heart.frame = CGRect(x: (gestureView.frame.width-size - 25)/2,
+        heart.frame = CGRect(x: (gestureView.frame.width-size)/2,
                              y: (gestureView.frame.height-size)/2,
-                             width: size + 25,
+                             width: size ,
                              height: size)
         gestureView.addSubview(heart)
         self.reelData?.isLiked = true
