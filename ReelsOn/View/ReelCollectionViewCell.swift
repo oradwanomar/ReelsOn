@@ -2,7 +2,7 @@
 //  ReelCollectionViewCell.swift
 //  ReelsOn
 //
-//  Created by Omar Ahmed on 14/05/2022.
+//  Created by Omar Ahmed on 28/05/2022.
 //
 
 import UIKit
@@ -103,8 +103,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
     @objc func doubleTap(_ gesture : UIGestureRecognizer){
         guard let gestureView = gesture.view else {return}
         let size = gestureView.frame.width / 4
-        let heart = UIImageView(image: UIImage(systemName: "heart.fill"))
-        heart.tintColor = .white
+        let heart = UIImageView(image: UIImage(named: "love")?.withRenderingMode(.automatic).withTintColor(.white))
         heart.frame = CGRect(x: (gestureView.frame.width-size - 25)/2,
                              y: (gestureView.frame.height-size)/2,
                              width: size + 25,
