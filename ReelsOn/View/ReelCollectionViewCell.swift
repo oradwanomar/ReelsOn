@@ -103,8 +103,8 @@ class ReelCollectionViewCell: UICollectionViewCell {
     @objc func doubleTap(_ gesture : UIGestureRecognizer){
         guard let gestureView = gesture.view else {return}
         let size = gestureView.frame.width / 4
-        let heart = self.reelDetails.loveView
-//        heart.tintColor = .white
+        let heart = UIImageView(image: UIImage(systemName: "heart.fill"))
+        heart.tintColor = .white
         heart.frame = CGRect(x: (gestureView.frame.width-size - 25)/2,
                              y: (gestureView.frame.height-size)/2,
                              width: size + 25,

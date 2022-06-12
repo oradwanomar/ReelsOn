@@ -95,15 +95,6 @@ class ReelDetailsView : UIView {
         return v
     }()
     
-    lazy var loveView: AnimationView = {
-        let v = AnimationView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.animation = Animation.named("like")
-        v.loopMode = .loop
-        v.play()
-        return v
-    }()
-    
     lazy var equalizerView2: AnimationView = {
         let v = AnimationView()
         v.translatesAutoresizingMaskIntoConstraints = false
