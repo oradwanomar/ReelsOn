@@ -103,7 +103,7 @@ class ReelCollectionViewCell: UICollectionViewCell {
     @objc func doubleTap(_ gesture : UIGestureRecognizer){
         guard let gestureView = gesture.view else {return}
         let size = gestureView.frame.width / 4
-        let heart = UIImageView(image: UIImage(named: "love")?.withRenderingMode(.automatic).withTintColor(.white))
+        let heart = UIImageView(image: UIImage(named: "white-heart"))
         heart.frame = CGRect(x: (gestureView.frame.width-size)/2,
                              y: (gestureView.frame.height-size)/2,
                              width: size ,
@@ -127,17 +127,17 @@ class ReelCollectionViewCell: UICollectionViewCell {
         let size = gestureView.frame.width / 4
         let mute = UIImageView(image: UIImage(named: "mute"))
         mute.tintColor = .white
-        mute.frame = CGRect(x: (gestureView.frame.width-size)/2,
-                             y: (gestureView.frame.height-size)/2,
-                             width: size,
-                             height: size)
+        mute.frame = CGRect(x: (gestureView.frame.width-size + 25)/2,
+                             y: (gestureView.frame.height-size + 25)/2,
+                             width: size - 25,
+                             height: size - 25)
         
         let unmute = UIImageView(image: UIImage(named: "unmute"))
         unmute.tintColor = .white
-        unmute.frame = CGRect(x: (gestureView.frame.width-size)/2,
-                             y: (gestureView.frame.height-size)/2,
-                             width: size,
-                             height: size)
+        unmute.frame = CGRect(x: (gestureView.frame.width-size + 25)/2,
+                             y: (gestureView.frame.height-size + 25)/2,
+                             width: size - 25,
+                             height: size - 25)
                 
         if isMuted {
             gestureView.addSubview(mute)
