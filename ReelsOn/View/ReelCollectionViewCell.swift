@@ -110,12 +110,13 @@ class ReelCollectionViewCell: UICollectionViewCell {
                              height: size)
         gestureView.addSubview(heart)
         self.reelData?.isLiked = true
-        UIView.animate(withDuration: 2) {
-                heart.alpha = 0
-            } completion: { done in
-                if done {heart.removeFromSuperview()
-                }
-            }
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseIn) {
+            heart.transform = .init(scaleX: 1.5, y: 1.5)
+        } completion: { finished in
+            heart.transform = .identity
+            heart.removeFromSuperview()
+        }
+
 
         
     }
